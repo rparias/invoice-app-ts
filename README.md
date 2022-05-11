@@ -1,3 +1,40 @@
+# Invoice app
+
+This is a solution to the [Invoice app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/invoice-app-i7KaLTQjl). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+
+## Overview
+
+### The challenge
+
+Users should be able to:
+
+- View the optimal layout depending on their device's screen size
+
+### Screenshot
+
+<img alt="Preview" src="./src/assets/screenshots/preview.jpg"  width=600 align=center>
+
+### Links
+
+- Solution URL: [GitHub](https://github.com/rparias/invoice-app)
+- Live Site URL: [GitHub Pages](https://rparias.github.io/invoice-app/)
+
+### Built with
+
+- Semantic HTML5 markup
+- React
+- React Testing Library
+- Styled Components
+
+## Author
+
+- Frontend Mentor - [@rparias](https://www.frontendmentor.io/profile/rparias)
+- Twitter - [@rparias\_](https://twitter.com/rparias_)
+
+## Acknowledgments
+
+Curious about how improve the functionality of background-size property.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -26,21 +63,3 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
