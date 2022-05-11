@@ -1,0 +1,66 @@
+name: Deploy to Dev
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  quality-check-and-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm run test
+
+  # deploy-to-dev:
+  #   needs: quality-check-and-tests
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     - uses: actions/checkout@v2
+
+  #     - name: Cache node modules
+  #       uses: actions/cache@v2
+  #       env:
+  #         cache-name: cache-node-modules
+  #       with:
+  #         path: ~/.npm
+  #         key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+  #         restore-keys: |
+  #           ${{ runner.os }}-build-${{ env.cache-name }}-
+  #           ${{ runner.os }}-build-
+  #           ${{ runner.os }}-
+  #     - name: Install Dependencies
+  #       run: npm install
+
+  #     - name: Build
+  #       run: npm run build
+
+  #     - name: Deploy development to Netlify
+  #       uses: South-Paw/action-netlify-deploy@v1.2.0
+  #       with:
+  #         github-token: ${{ secrets.GITHUB_TOKEN }}
+  #         netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+  #         netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
+  #         build-dir: './public'
+  #         comment-on-commit: true
