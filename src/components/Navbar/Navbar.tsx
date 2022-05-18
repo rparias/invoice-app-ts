@@ -1,5 +1,6 @@
 import React from 'react'
 import { Box } from 'grommet'
+import NavbarContainer from './styles'
 import NavbarHeader from './NavbarHeader'
 import NavbarFooter from './NavbarFooter'
 
@@ -9,7 +10,7 @@ const Navbar: React.FC = (): JSX.Element => {
   }
 
   return (
-    <nav className="navbar" style={{ height: '100%' }}>
+    <NavbarContainer>
       <Box
         flex
         background="dark-1"
@@ -21,7 +22,7 @@ const Navbar: React.FC = (): JSX.Element => {
         <NavbarHeader />
         <NavbarFooter handleOnClick={handleOnClick} />
       </Box>
-    </nav>
+    </NavbarContainer>
   )
 }
 
