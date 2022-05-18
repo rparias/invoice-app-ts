@@ -1,5 +1,4 @@
 import React from 'react'
-import { Box } from 'grommet'
 import NavbarContainer from './styles'
 import NavbarHeader from './NavbarHeader'
 import NavbarFooter from './NavbarFooter'
@@ -11,17 +10,8 @@ const Navbar: React.FC = (): JSX.Element => {
 
   return (
     <NavbarContainer>
-      <Box
-        flex
-        background="dark-1"
-        width="xsmall"
-        align="center"
-        round={{ corner: 'right', size: '15px' }}
-        style={{ height: '100%', justifyContent: 'space-between' }}
-      >
-        <NavbarHeader />
-        <NavbarFooter handleOnClick={handleOnClick} />
-      </Box>
+      <NavbarHeader />
+      <NavbarFooter handleOnClick={handleOnClick} />
     </NavbarContainer>
   )
 }
