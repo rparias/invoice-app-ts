@@ -10,6 +10,7 @@ const NavbarContainer = styled.nav`
 
   @media only screen and (max-width: 768px) {
     flex-direction: row;
+    border-radius: 0 0 1rem 1rem;
   }
 `
 
@@ -27,9 +28,23 @@ const NavbarFooterContainer = styled.div`
 
   @media only screen and (max-width: 768px) {
     flex-direction: row;
+    width: 150px;
+    padding-right: 1rem;
     hr {
-      transform: rotate(90deg);
+      width: 0;
+      height: 100%;
+      border-right: 1px solid #494e6e;
+      border-left: none;
     }
   }
 `
-export { NavbarContainer, NavbarFooterContainer }
+
+const NavbarHeaderContainer = styled.div`
+  width: 100%;
+  height: 100px;
+
+  @media only screen and (max-width: 768px) {
+    width: 100px;
+  }
+`
+export { NavbarContainer, NavbarHeaderContainer, NavbarFooterContainer }

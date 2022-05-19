@@ -1,9 +1,10 @@
 import React from 'react'
 import { Box } from 'grommet'
 import { ReactComponent as Logo } from '../../assets/logo.svg'
+import { NavbarHeaderContainer } from './styles'
 
 const NavbarHeader: React.FC = (): JSX.Element => (
-  <Box width="100%" height="100px">
+  <NavbarHeaderContainer>
     <Box
       background="brand"
       height="100%"
@@ -13,7 +14,7 @@ const NavbarHeader: React.FC = (): JSX.Element => (
     >
       <Logo />
     </Box>
-  </Box>
+  </NavbarHeaderContainer>
 )
 
 export default NavbarHeader
