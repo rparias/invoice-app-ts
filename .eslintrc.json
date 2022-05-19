@@ -24,6 +24,7 @@
   "plugins": ["react", "@typescript-eslint", "react-hooks"],
   "rules": {
     "comma-dangle": 0,
+    "import/prefer-default-export": "off",
     "no-use-before-define": "off",
     "no-shadow": "off",
     "object-curly-newline": "off",
