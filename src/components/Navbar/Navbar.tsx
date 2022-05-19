@@ -1,5 +1,5 @@
 import React from 'react'
-import NavbarContainer from './styles'
+import { NavbarContainer } from './styles'
 import NavbarHeader from './NavbarHeader'
 import NavbarFooter from './NavbarFooter'
 
