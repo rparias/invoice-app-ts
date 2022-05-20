@@ -11,6 +11,10 @@ const InvoiceContainer = styled.article`
       'id name'
       'date status'
       'price status';
+
+    .invoice__header {
+      margin-bottom: 1.5rem;
+    }
   }
 `
 
