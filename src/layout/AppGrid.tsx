@@ -16,8 +16,8 @@ const AppGrid: React.FC = (): JSX.Element => {
           areas={[
             {
               name: 'sidebar',
-              start: width! > 1024 ? [0, 1] : [0, 0],
-              end: width! > 1024 ? [0, 1] : [1, 0]
+              start: width > 1024 ? [0, 1] : [0, 0],
+              end: width > 1024 ? [0, 1] : [1, 0]
             },
             { name: 'main', start: [1, 1], end: [1, 1] }
           ]}
