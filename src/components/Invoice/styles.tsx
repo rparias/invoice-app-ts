@@ -1,12 +1,14 @@
 import styled from 'styled-components'
 
 const InvoiceContainer = styled.article`
-  border: 1px solid red;
-  width: 80%;
+  width: 100%;
+  padding: 1.8rem 0;
+  background: transparent;
   display: grid;
   grid-template-areas: 'id date name price status';
+  align-items: center;
 
-  @media only screen and (max-width: 425px) {
+  @media only screen and (max-width: 768px) {
     grid-template-areas:
       'id name'
       'date status'

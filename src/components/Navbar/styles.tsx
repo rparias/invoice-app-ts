@@ -8,7 +8,8 @@ const NavbarContainer = styled.nav`
   background-color: #1e2139;
   border-radius: 0 1rem 1rem 0;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1024px) {
+    height: auto;
     flex-direction: row;
     border-radius: 0 0 1rem 1rem;
   }
@@ -26,7 +27,7 @@ const NavbarFooterContainer = styled.div`
     border-bottom: none;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1024px) {
     flex-direction: row;
     width: 150px;
     padding-right: 1rem;
@@ -43,7 +44,7 @@ const NavbarHeaderContainer = styled.div`
   width: 100%;
   height: 100px;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1024px) {
     width: 100px;
   }
 `
