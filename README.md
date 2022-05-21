@@ -16,8 +16,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [GitHub](https://github.com/rparias/invoice-app)
-- Live Site URL: [GitHub Pages](https://rparias.github.io/invoice-app/)
+- Solution URL: [GitHub](https://github.com/rparias/invoice-app-ts)
+- Live Site URL: [GitHub Pages](https://rparias.github.io/invoice-app-ts/)
 
 ### Built with
 
