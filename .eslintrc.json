@@ -25,7 +25,6 @@
   "rules": {
     "comma-dangle": 0,
     "import/prefer-default-export": "off",
-    "linebreak-style": ["error", "windows"],
     "no-console": "off",
     "no-use-before-define": "off",
     "no-shadow": "off",
