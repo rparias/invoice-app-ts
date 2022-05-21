@@ -30,7 +30,7 @@ const AppGrid: React.FC = (): JSX.Element => {
           <Box gridArea="main" justify="center" align="center">
             <Text>Invoices</Text>
             <Invoice />
-            <InvoiceStatus />
+            <InvoiceStatus status="Paid" />
           </Box>
         </Grid>
       ) : (

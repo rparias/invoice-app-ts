@@ -1,10 +1,13 @@
 import React from 'react'
 import { InvoiceStatusContainer } from './styles'
 
-const InvoiceStatus: React.FC = (): JSX.Element => (
-  <InvoiceStatusContainer>
+type Props = {
+  status: string
+}
+const InvoiceStatus: React.FC<Props> = ({ status }): JSX.Element => (
+  <InvoiceStatusContainer status={status.toLowerCase()}>
     <span className="dot" />
-    Paid
+    {status}
   </InvoiceStatusContainer>
 )
 
