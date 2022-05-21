@@ -1,6 +1,7 @@
 import React from 'react'
 import { Box, Text } from 'grommet'
 import { InvoiceContainer } from './styles'
+import { InvoiceStatus } from '../InvoiceStatus'
 
 const Invoice: React.FC = (): JSX.Element => (
   <Box background={{ dark: 'dark-3', light: 'light-1' }} width="100%" round="small">
@@ -25,9 +26,9 @@ const Invoice: React.FC = (): JSX.Element => (
       <Text a11yTitle="Invoice price" gridArea="price" weight="bold">
         $1,800.90
       </Text>
-      <Text a11yTitle="Invoice status" gridArea="status">
-        Paid
-      </Text>
+      <div className="invoice__status">
+        <InvoiceStatus status="paid" />
+      </div>
     </InvoiceContainer>
   </Box>
 )

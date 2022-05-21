@@ -3,7 +3,6 @@ import { Box, Grid, Text } from 'grommet'
 import { useWindowSize } from '../hooks'
 import { Navbar } from '../components/Navbar'
 import { Invoice } from '../components/Invoice'
-import { InvoiceStatus } from '../components/InvoiceStatus'
 
 const AppGrid: React.FC = (): JSX.Element => {
   const { width } = useWindowSize()
@@ -30,7 +29,6 @@ const AppGrid: React.FC = (): JSX.Element => {
           <Box gridArea="main" justify="center" align="center">
             <Text>Invoices</Text>
             <Invoice />
-            <InvoiceStatus status="Paid" />
           </Box>
         </Grid>
       ) : (
