@@ -28,7 +28,20 @@ const AppGrid: React.FC = (): JSX.Element => {
           </Box>
           <Box gridArea="main" justify="center" align="center">
             <Text>Invoices</Text>
-            <Invoice />
+            <Invoice
+              id="RT3080"
+              date="19 Aug 2021"
+              name="Jensen Huang"
+              price="$1,800.90"
+              status="paid"
+            />
+            <Invoice
+              id="RT3081"
+              date="11 Aug 2022"
+              name="Ronald Arias"
+              price="$1,708.90"
+              status="pending"
+            />
           </Box>
         </Grid>
       ) : (

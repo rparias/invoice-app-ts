@@ -3,7 +3,15 @@ import { Box, Text } from 'grommet'
 import { InvoiceContainer } from './styles'
 import { InvoiceStatus } from '../InvoiceStatus'
 
-const Invoice: React.FC = (): JSX.Element => (
+type Props = {
+  id: string
+  date: string
+  name: string
+  price: string
+  status: string
+}
+
+const Invoice: React.FC<Props> = ({ id, date, name, price, status }): JSX.Element => (
   <Box background={{ dark: 'dark-3', light: 'light-1' }} width="100%" round="small">
     <InvoiceContainer>
       <div className="invoice__header">
@@ -11,23 +19,23 @@ const Invoice: React.FC = (): JSX.Element => (
           #
         </Text>
         <Text a11yTitle="Invoice Id" gridArea="id" weight="bold">
-          RT3080
+          {id}
         </Text>
       </div>
       <div>
         <Text color="dark-6">Due </Text>
         <Text a11yTitle="Invoice date" gridArea="date" color="dark-3">
-          19 Aug 2021
+          {date}
         </Text>
       </div>
       <Text a11yTitle="Invoice name" gridArea="name" color="dark-6" className="invoice__header">
-        Jensen Huang
+        {name}
       </Text>
       <Text a11yTitle="Invoice price" gridArea="price" weight="bold">
-        $1,800.90
+        {price}
       </Text>
       <div className="invoice__status">
-        <InvoiceStatus status="paid" />
+        <InvoiceStatus status={status} />
       </div>
     </InvoiceContainer>
   </Box>
