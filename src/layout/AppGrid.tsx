@@ -3,6 +3,7 @@ import { Box, Grid, Text } from 'grommet'
 import { useWindowSize } from '../hooks'
 import { Navbar } from '../components/Navbar'
 import { Invoice } from '../components/Invoice'
+import { HeadingInvoices } from '../components/Heading'
 
 const AppGrid: React.FC = (): JSX.Element => {
   const { width } = useWindowSize()
@@ -27,7 +28,7 @@ const AppGrid: React.FC = (): JSX.Element => {
             <Navbar />
           </Box>
           <Box gridArea="main" justify="center" align="center">
-            <Text>Invoices</Text>
+            <HeadingInvoices />
             <Invoice
               id="RT3080"
               date="19 Aug 2021"
