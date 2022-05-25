@@ -13,6 +13,7 @@ const InvoiceStatusContainer = styled.div<Props>`
   color: ${(props) => (props.status === 'paid' ? '#33d69f' : '#FF8F00')};
   background-color: ${(props) => (props.status === 'paid' ? '#33d69f0f' : '#FF8F000F')};
   border-radius: 6px;
+  width: 85px;
 
   .dot {
     height: 0.625rem;

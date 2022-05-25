@@ -8,10 +8,6 @@ const InvoiceContainer = styled.article`
   grid-template-areas: 'id date name price status';
   align-items: center;
 
-  .invoice__status {
-    max-width: 120px;
-  }
-
   @media only screen and (max-width: 768px) {
     grid-template-areas:
       'id name'
