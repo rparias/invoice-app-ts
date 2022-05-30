@@ -4,6 +4,7 @@ import { useWindowSize } from '../hooks'
 import { Navbar } from '../components/Navbar'
 import { Invoice } from '../components/Invoice'
 import { HeadingInvoices } from '../components/Heading'
+import { Button } from '../components/Button'
 
 const AppGrid: React.FC = (): JSX.Element => {
   const { width } = useWindowSize()
@@ -43,6 +44,8 @@ const AppGrid: React.FC = (): JSX.Element => {
               price="$1,708.90"
               status="pending"
             />
+            <Button text="Mark as Paid" color="#7C5DFA" />
+            <Button text="Edit" color="red" />
           </Box>
         </Grid>
       ) : (
