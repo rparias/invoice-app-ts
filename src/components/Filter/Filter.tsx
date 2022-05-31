@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { FormDown } from 'grommet-icons'
 import { Box, CheckBoxGroup, DropButton, Text } from 'grommet'
+import { useWindowSize } from '../../hooks'
+import { returnFirstWord } from '../../utils'
 
 interface DropProps {
   top?: 'top' | 'bottom'
@@ -13,6 +15,8 @@ const Filter: React.FC = (): JSX.Element => {
   const [open, setOpen] = useState(false)
   const [selectedFilters, setSelectedFilters] = useState<string[]>([])
   const align: DropProps = { top: 'bottom' }
+  const filterText = 'Filter by status'
+  const { width } = useWindowSize()
 
   return (
     <DropButton
@@ -35,7 +39,7 @@ const Filter: React.FC = (): JSX.Element => {
       }
     >
       <Box direction="row" gap="medium" align="center" pad="small">
-        <Text>Filter by status</Text>
+        <Text>{width >= 768 ? filterText : returnFirstWord(filterText)}</Text>
         <FormDown color="brand" />
       </Box>
     </DropButton>
