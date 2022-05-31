@@ -29,6 +29,7 @@
     "no-use-before-define": "off",
     "no-shadow": "off",
     "object-curly-newline": "off",
+    "react/jsx-wrap-multilines": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
     "react-hooks/rules-of-hooks": "error",
