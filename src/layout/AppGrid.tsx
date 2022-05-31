@@ -45,7 +45,8 @@ const AppGrid: React.FC = (): JSX.Element => {
               status="pending"
             />
             <Button text="Mark as Paid" color="#7C5DFA" />
-            <Button text="Edit" color="red" />
+            <Button text="Delete" color="#EC5757" />
+            <Button text="Edit" color="#252945" />
           </Box>
         </Grid>
       ) : (
