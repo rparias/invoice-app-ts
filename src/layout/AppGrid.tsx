@@ -27,7 +27,12 @@ const AppGrid: React.FC = (): JSX.Element => {
           <Box gridArea="sidebar">
             <Navbar />
           </Box>
-          <Box gridArea="main" justify="center" align="center">
+          <Box
+            gridArea="main"
+            justify="center"
+            align="center"
+            pad={width >= 1440 ? 'xlarge' : 'medium'}
+          >
             <HeadingInvoices />
             <Invoice
               id="RT3080"
