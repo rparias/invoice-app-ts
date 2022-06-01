@@ -2,11 +2,21 @@ import React from 'react'
 import { Box, Grid, Text } from 'grommet'
 import { useWindowSize } from '../hooks'
 import { Navbar } from '../components/Navbar'
-import { Invoice } from '../components/Invoice'
 import { HeadingInvoices } from '../components/Heading'
+import { InvoiceList } from './InvoiceList'
 
 const AppGrid: React.FC = (): JSX.Element => {
   const { width } = useWindowSize()
+  const invoices = [
+    { id: 'RT3080', date: '19 Aug 2021', name: 'Jensen Huang', price: '$1,800.90', status: 'paid' },
+    {
+      id: 'RT3081',
+      date: '11 Aug 2022',
+      name: 'Ronald Arias',
+      price: '$1,708.90',
+      status: 'pending'
+    }
+  ]
   return (
     <>
       {Grid.available ? (
@@ -34,20 +44,7 @@ const AppGrid: React.FC = (): JSX.Element => {
             pad={width >= 1440 ? 'xlarge' : 'medium'}
           >
             <HeadingInvoices />
-            <Invoice
-              id="RT3080"
-              date="19 Aug 2021"
-              name="Jensen Huang"
-              price="$1,800.90"
-              status="paid"
-            />
-            <Invoice
-              id="RT3081"
-              date="11 Aug 2022"
-              name="Ronald Arias"
-              price="$1,708.90"
-              status="pending"
-            />
+            <InvoiceList invoices={invoices} />
           </Box>
         </Grid>
       ) : (

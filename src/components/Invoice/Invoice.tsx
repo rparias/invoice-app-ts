@@ -2,16 +2,9 @@ import React from 'react'
 import { Box, Text } from 'grommet'
 import { InvoiceContainer } from './styles'
 import { InvoiceStatus } from '../InvoiceStatus'
+import { Invoice as InvoiceProps } from '../../types'
 
-type Props = {
-  id: string
-  date: string
-  name: string
-  price: string
-  status: string
-}
-
-const Invoice: React.FC<Props> = ({ id, date, name, price, status }): JSX.Element => (
+const Invoice: React.FC<InvoiceProps> = ({ id, date, name, price, status }): JSX.Element => (
   <Box background={{ dark: 'dark-3', light: 'light-1' }} width="100%" round="small">
     <InvoiceContainer>
       <div className="invoice__header">
