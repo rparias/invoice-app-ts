@@ -5,6 +5,8 @@ const InvoiceContainer = styled.article`
   padding: 1.8rem 0;
   background: transparent;
   display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
   grid-template-areas: 'id date name price status';
   align-items: center;
 
