@@ -40,6 +40,7 @@ const AppGrid: React.FC = (): JSX.Element => {
             justify="center"
             align="center"
             pad={width >= 1440 ? 'xlarge' : 'medium'}
+            style={{ display: 'block' }}
           >
             <HeadingInvoices />
             {/* TODO: remove slice */}
