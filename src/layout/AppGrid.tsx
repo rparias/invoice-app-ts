@@ -4,19 +4,17 @@ import { useWindowSize } from '../hooks'
 import { Navbar } from '../components/Navbar'
 import { HeadingInvoices } from '../components/Heading'
 import { InvoiceList } from './InvoiceList'
+import { Invoice } from '../types'
+import invoiceData from '../data/data.json'
 
 const AppGrid: React.FC = (): JSX.Element => {
   const { width } = useWindowSize()
-  const invoices = [
-    { id: 'RT3080', date: '19 Aug 2021', name: 'Jensen Huang', price: '$1,800.90', status: 'paid' },
-    {
-      id: 'RT3081',
-      date: '11 Aug 2022',
-      name: 'Ronald Arias',
-      price: '$1,708.90',
-      status: 'pending'
-    }
-  ]
+  const invoices: Invoice[] = invoiceData.map((invoice) => {
+    const { id, createdAt, clientName, total, status } = invoice
+    const invoiceFormated: Invoice = { id, date: createdAt, name: clientName, price: total, status }
+    return invoiceFormated
+  })
+
   return (
     <>
       {Grid.available ? (
@@ -44,7 +42,8 @@ const AppGrid: React.FC = (): JSX.Element => {
             pad={width >= 1440 ? 'xlarge' : 'medium'}
           >
             <HeadingInvoices />
-            <InvoiceList invoices={invoices} />
+            {/* TODO: remove slice */}
+            <InvoiceList invoices={invoices.slice(0, 4)} />
           </Box>
         </Grid>
       ) : (

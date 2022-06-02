@@ -25,7 +25,7 @@ const Invoice: React.FC<InvoiceProps> = ({ id, date, name, price, status }): JSX
         {name}
       </Text>
       <Text a11yTitle="Invoice price" gridArea="price" weight="bold">
-        {price}
+        {`$${price.toFixed(2)}`}
       </Text>
       <div className="invoice__status">
         <InvoiceStatus status={status} />
