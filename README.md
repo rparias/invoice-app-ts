@@ -30,6 +30,7 @@ Users should be able to:
 
 - Frontend Mentor - [@rparias](https://www.frontendmentor.io/profile/rparias)
 - Twitter - [@rparias\_](https://twitter.com/rparias_)
+- Github - [@rparias](https://github.com/rparias) and [@erickariasec](https://github.com/erickariasec)
 
 ## Acknowledgments
 
