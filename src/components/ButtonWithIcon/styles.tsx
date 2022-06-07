@@ -5,10 +5,20 @@ const ButtonWithIconContainer = styled.button`
   color: #ffffff;
   cursor: pointer;
   border: none;
-  border-radius: 2rem;
+  border-radius: 3rem;
   font-size: 1rem;
   font-weight: 700;
-  padding: 1rem 2rem;
+  padding: 0.5rem;
+  padding-right: 1.5rem;
+  display: flex;
+  align-items: center;
+
+  .icon {
+    background-color: #ffffff;
+    border-radius: 50%;
+    margin-right: 1rem;
+    padding: 1rem;
+  }
 
   &:hover {
     background-color: #9277ff;
