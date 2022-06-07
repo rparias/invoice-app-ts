@@ -1,3 +1,3 @@
-import { returnFirstWord } from './utils'
+import { returnFirstWord, getNumberOfInvoices } from './utils'
 
-export { returnFirstWord }
+export { returnFirstWord, getNumberOfInvoices }

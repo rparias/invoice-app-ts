@@ -42,7 +42,7 @@ const AppGrid: React.FC = (): JSX.Element => {
             pad={width >= 1440 ? 'xlarge' : 'medium'}
             style={{ display: 'block' }}
           >
-            <HeadingInvoices />
+            <HeadingInvoices numberOfInvoices={invoices.length} />
             {/* TODO: remove slice */}
             <InvoiceList invoices={invoices.slice(0, 4)} />
           </Box>
