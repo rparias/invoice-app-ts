@@ -15,6 +15,8 @@ const AppGrid: React.FC = (): JSX.Element => {
     return invoiceFormated
   })
 
+  const reducedListInvoices = invoices.slice(0, 4)
+
   return (
     <>
       {Grid.available ? (
@@ -42,9 +44,9 @@ const AppGrid: React.FC = (): JSX.Element => {
             pad={width >= 1440 ? 'xlarge' : 'medium'}
             style={{ display: 'block' }}
           >
-            <HeadingInvoices numberOfInvoices={invoices.length} />
-            {/* TODO: remove slice */}
-            <InvoiceList invoices={invoices.slice(0, 4)} />
+            {/* TODO: remove reducedListInvoices */}
+            <HeadingInvoices numberOfInvoices={reducedListInvoices.length} />
+            <InvoiceList invoices={reducedListInvoices} />
           </Box>
         </Grid>
       ) : (
