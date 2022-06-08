@@ -16,7 +16,7 @@ const AppGrid: React.FC = (): JSX.Element => {
     return invoiceFormated
   })
 
-  const [invoices] = useState(initialData.slice(0, 0))
+  const [invoices] = useState(initialData)
 
   return (
     <>
@@ -42,8 +42,7 @@ const AppGrid: React.FC = (): JSX.Element => {
             gridArea="main"
             justify="center"
             align="center"
-            pad={width >= 1440 ? 'xlarge' : 'medium'}
-            style={{ display: 'block' }}
+            style={{ display: 'block', padding: width >= 1440 ? '1rem 20rem' : '2rem' }}
           >
             <HeadingInvoices numberOfInvoices={invoices.length} />
             {invoices.length > 0 ? <InvoiceList invoices={invoices} /> : <EmptyPage />}
