@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Box, Grid, Text } from 'grommet'
 import { useWindowSize } from '../hooks'
 import { Navbar } from '../components/Navbar'
@@ -6,16 +6,17 @@ import { HeadingInvoices } from '../components/Heading'
 import { InvoiceList } from './InvoiceList'
 import { Invoice } from '../types'
 import invoiceData from '../data/data.json'
+import { EmptyPage } from './EmptyPage'
 
 const AppGrid: React.FC = (): JSX.Element => {
   const { width } = useWindowSize()
-  const invoices: Invoice[] = invoiceData.map((invoice) => {
+  const initialData: Invoice[] = invoiceData.map((invoice) => {
     const { id, createdAt, clientName, total, status } = invoice
     const invoiceFormated: Invoice = { id, date: createdAt, name: clientName, price: total, status }
     return invoiceFormated
   })
 
-  const reducedListInvoices = invoices.slice(0, 4)
+  const [invoices] = useState(initialData.slice(0, 0))
 
   return (
     <>
@@ -44,9 +45,8 @@ const AppGrid: React.FC = (): JSX.Element => {
             pad={width >= 1440 ? 'xlarge' : 'medium'}
             style={{ display: 'block' }}
           >
-            {/* TODO: remove reducedListInvoices */}
-            <HeadingInvoices numberOfInvoices={reducedListInvoices.length} />
-            <InvoiceList invoices={reducedListInvoices} />
+            <HeadingInvoices numberOfInvoices={invoices.length} />
+            {invoices.length > 0 ? <InvoiceList invoices={invoices} /> : <EmptyPage />}
           </Box>
         </Grid>
       ) : (
