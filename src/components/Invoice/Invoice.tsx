@@ -5,7 +5,7 @@ import { InvoiceStatus } from '../InvoiceStatus'
 import { Invoice as InvoiceProps } from '../../types'
 
 const Invoice: React.FC<InvoiceProps> = ({ id, date, name, price, status }): JSX.Element => (
-  <Box background={{ dark: 'dark-3', light: 'light-1' }} width="100%" round="small">
+  <Box background={{ dark: 'dark-3', light: '#fff' }} width="100%" round="small" elevation="xsmall">
     <InvoiceContainer>
       <div className="invoice__header">
         <Text color="dark-3" weight="bold">

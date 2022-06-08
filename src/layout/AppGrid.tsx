@@ -7,6 +7,7 @@ import { InvoiceList } from './InvoiceList'
 import { Invoice } from '../types'
 import invoiceData from '../data/data.json'
 import { EmptyPage } from './EmptyPage'
+import { AppGridContainer } from './styles'
 
 const AppGrid: React.FC = (): JSX.Element => {
   const { width } = useWindowSize()
@@ -19,7 +20,7 @@ const AppGrid: React.FC = (): JSX.Element => {
   const [invoices] = useState(initialData)
 
   return (
-    <>
+    <AppGridContainer>
       {Grid.available ? (
         <Grid
           fill
@@ -33,17 +34,12 @@ const AppGrid: React.FC = (): JSX.Element => {
             },
             { name: 'main', start: [1, 1], end: [1, 1] }
           ]}
-          style={{ height: '100vh' }}
+          className="grid"
         >
           <Box gridArea="sidebar">
             <Navbar />
           </Box>
-          <Box
-            gridArea="main"
-            justify="center"
-            align="center"
-            style={{ display: 'block', padding: width >= 1440 ? '1rem 20rem' : '2rem' }}
-          >
+          <Box gridArea="main" justify="center" align="center" className="main-content">
             <HeadingInvoices numberOfInvoices={invoices.length} />
             {invoices.length > 0 ? <InvoiceList invoices={invoices} /> : <EmptyPage />}
           </Box>
@@ -51,7 +47,7 @@ const AppGrid: React.FC = (): JSX.Element => {
       ) : (
         <Text>Grid is not supported by your browser</Text>
       )}
-    </>
+    </AppGridContainer>
   )
 }
 
