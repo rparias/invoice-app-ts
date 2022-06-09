@@ -4,7 +4,7 @@ const AppGridContainer = styled.div`
   background: #f8f8f8;
 
   .grid {
-    height: 100vh;
+    height: 100%;
   }
 
   .main-content {
@@ -12,9 +12,15 @@ const AppGridContainer = styled.div`
     display: block;
   }
 
+  @media only screen and (min-width: 1025px) {
+    .main-content {
+      padding: 1rem 10rem 1rem 15rem;
+    }
+  }
+
   @media only screen and (min-width: 1440px) {
     .main-content {
-      padding: 1rem 20rem;
+      padding: 1rem 15rem 1rem 20rem;
     }
   }
 `

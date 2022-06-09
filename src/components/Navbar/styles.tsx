@@ -1,17 +1,19 @@
 import styled from 'styled-components'
 
 const NavbarContainer = styled.nav`
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: #1e2139;
   border-radius: 0 1rem 1rem 0;
+  position: fixed;
 
   @media only screen and (max-width: 1024px) {
     height: auto;
     flex-direction: row;
     border-radius: 0 0 1rem 1rem;
+    position: static;
   }
 `
 
