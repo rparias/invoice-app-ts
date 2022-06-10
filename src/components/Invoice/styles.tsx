@@ -34,6 +34,18 @@ const InvoiceContainer = styled.article`
       padding-right: 6rem;
     }
   }
+
+  .invoice__status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media only screen and (max-width: 768px) {
+      svg {
+        display: none;
+      }
+    }
+  }
 `
 
 export { InvoiceContainer }

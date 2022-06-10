@@ -3,6 +3,7 @@ import { Box, Text } from 'grommet'
 import { InvoiceContainer } from './styles'
 import { InvoiceStatus } from '../InvoiceStatus'
 import { Invoice as InvoiceProps } from '../../types'
+import { ReactComponent as ArrowRight } from '../../assets/icon-arrow-right.svg'
 
 const Invoice: React.FC<InvoiceProps> = ({ id, date, name, price, status }): JSX.Element => (
   <Box
@@ -35,6 +36,7 @@ const Invoice: React.FC<InvoiceProps> = ({ id, date, name, price, status }): JSX
       </Text>
       <div className="invoice__status">
         <InvoiceStatus status={status} />
+        <ArrowRight />
       </div>
     </InvoiceContainer>
   </Box>
