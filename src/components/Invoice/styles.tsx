@@ -20,6 +20,20 @@ const InvoiceContainer = styled.article`
       margin-bottom: 1.5rem;
     }
   }
+
+  .price {
+    text-align: left;
+    padding-right: 0;
+
+    @media only screen and (min-width: 1024px) {
+      text-align: right;
+      padding-right: 4rem;
+    }
+
+    @media only screen and (min-width: 1600px) {
+      padding-right: 6rem;
+    }
+  }
 `
 
 export { InvoiceContainer }

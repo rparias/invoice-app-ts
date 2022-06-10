@@ -30,7 +30,7 @@ const Invoice: React.FC<InvoiceProps> = ({ id, date, name, price, status }): JSX
       <Text a11yTitle="Invoice name" gridArea="name" color="dark-6" className="invoice__header">
         {name}
       </Text>
-      <Text a11yTitle="Invoice price" gridArea="price" weight="bold">
+      <Text a11yTitle="Invoice price" className="price" gridArea="price" weight="bold">
         {`$${price.toFixed(2)}`}
       </Text>
       <div className="invoice__status">
