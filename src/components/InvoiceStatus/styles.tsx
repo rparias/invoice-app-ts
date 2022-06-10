@@ -9,6 +9,7 @@ const InvoiceStatusContainer = styled.div<Props>`
   font-size: 1.125rem;
   font-weight: 700;
   text-transform: capitalize;
+  text-align: center;
   line-height: 1rem;
   color: ${(props) => (props.status === 'paid' ? '#33d69f' : '#FF8F00')};
   background-color: ${(props) => (props.status === 'paid' ? '#33d69f0f' : '#FF8F000F')};
