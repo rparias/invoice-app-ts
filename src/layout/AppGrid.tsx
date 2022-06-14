@@ -11,6 +11,8 @@ import { AppGridContainer } from './styles'
 
 const AppGrid: React.FC = (): JSX.Element => {
   const { width } = useWindowSize()
+  const [isDarkTheme, setIsDarkTheme] = useState(false)
+
   const initialData: Invoice[] = invoiceData.map((invoice) => {
     const { id, createdAt, clientName, total, status } = invoice
     const invoiceFormated: Invoice = { id, date: createdAt, name: clientName, price: total, status }
@@ -37,7 +39,7 @@ const AppGrid: React.FC = (): JSX.Element => {
           className="grid"
         >
           <Box gridArea="sidebar">
-            <Navbar />
+            <Navbar isDarkTheme={isDarkTheme} setIsDarkTheme={setIsDarkTheme} />
           </Box>
           <Box gridArea="main" justify="center" align="center" className="main-content">
             <HeadingInvoices numberOfInvoices={invoices.length} />
