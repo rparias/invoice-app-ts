@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 type Props = {
   status: string
+  ariaLabelledby?: string
 }
 
 const statusBgColor = {
