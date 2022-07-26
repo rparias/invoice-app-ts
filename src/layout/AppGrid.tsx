@@ -8,6 +8,7 @@ import { Invoice } from '../types'
 import invoiceData from '../data/data.json'
 import { EmptyPage } from './EmptyPage'
 import { AppGridContainer } from './styles'
+import Button from '../components/Button'
 
 const AppGrid: React.FC = (): JSX.Element => {
   const { width } = useWindowSize()
@@ -43,6 +44,10 @@ const AppGrid: React.FC = (): JSX.Element => {
           </Box>
           <Box gridArea="main" justify="center" align="center" className="main-content">
             <HeadingInvoices numberOfInvoices={invoices.length} />
+            <Button label="Mark as Paid" />
+            <Button label="Delete" type="danger" />
+            <Button label="Save as Draft" type="light" />
+            <Button label="Save as Draft" type="dark" />
             {invoices.length > 0 ? <InvoiceList invoices={invoices} /> : <EmptyPage />}
           </Box>
         </Grid>
