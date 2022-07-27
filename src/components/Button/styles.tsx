@@ -1,9 +1,5 @@
 import styled from 'styled-components'
 
-type Props = {
-  styleButton: string
-}
-
 const styleBgColor = {
   primary: '#7c5dfa',
   danger: '#EC5757',
@@ -18,9 +14,8 @@ const styleBgHoverColor = {
   dark: '#1E2139'
 }
 
-const ButtonContainer = styled.button<Props>`
-  background-color: ${(props) => styleBgColor[props.styleButton as keyof typeof styleBgColor]};
-  color: ${(props) => (props.styleButton === 'light' ? '#888EB0' : '#ffffff')};
+const ButtonContainer = styled.button`
+  color: #ffffff;
   cursor: pointer;
   border: none;
   border-radius: 3rem;
@@ -28,9 +23,33 @@ const ButtonContainer = styled.button<Props>`
   font-weight: 700;
   padding: 1.3rem 2rem;
 
-  &:hover {
-    background-color: ${(props) =>
-      styleBgHoverColor[props.styleButton as keyof typeof styleBgHoverColor]};
+  &.primary {
+    background-color: ${styleBgColor.primary};
+    &:hover {
+      background-color: ${styleBgHoverColor.primary};
+    }
+  }
+
+  &.danger {
+    background-color: ${styleBgColor.danger};
+    &:hover {
+      background-color: ${styleBgHoverColor.danger};
+    }
+  }
+
+  &.light {
+    color: #888eb0;
+    background-color: ${styleBgColor.light};
+    &:hover {
+      background-color: ${styleBgHoverColor.light};
+    }
+  }
+
+  &.dark {
+    background-color: ${styleBgColor.dark};
+    &:hover {
+      background-color: ${styleBgHoverColor.dark};
+    }
   }
 `
 

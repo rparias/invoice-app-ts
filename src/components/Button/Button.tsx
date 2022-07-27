@@ -5,15 +5,15 @@ type style = 'primary' | 'danger' | 'light' | 'dark'
 
 type Props = {
   label: string
-  type?: style
+  className?: style
 }
 
-const Button: React.FC<Props> = ({ label, type = 'primary' }): JSX.Element => (
-  <ButtonContainer styleButton={type}>{label}</ButtonContainer>
+const Button: React.FC<Props> = ({ label, className = 'primary' }): JSX.Element => (
+  <ButtonContainer className={className}>{label}</ButtonContainer>
 )
 
 Button.defaultProps = {
-  type: 'primary'
+  className: 'primary'
 }
 
 export default Button
