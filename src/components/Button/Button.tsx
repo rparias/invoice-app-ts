@@ -1,7 +1,7 @@
 import React from 'react'
 import { ButtonContainer } from './styles'
 
-type style = 'primary' | 'danger' | 'light' | 'dark'
+type style = 'primary' | 'danger' | 'gray-light' | 'gray-dark'
 
 type Props = {
   label: string

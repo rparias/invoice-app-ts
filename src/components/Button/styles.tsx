@@ -3,15 +3,15 @@ import styled from 'styled-components'
 const styleBgColor = {
   primary: '#7c5dfa',
   danger: '#EC5757',
-  light: '#373B53',
-  dark: '#373B53'
+  grayLight: '#373B53',
+  grayDark: '#373B53'
 }
 
 const styleBgHoverColor = {
   primary: '#9277ff',
   danger: '#FF9797',
-  light: '#0C0E16',
-  dark: '#1E2139'
+  grayLight: '#0C0E16',
+  grayDark: '#1E2139'
 }
 
 const ButtonContainer = styled.button`
@@ -37,18 +37,18 @@ const ButtonContainer = styled.button`
     }
   }
 
-  &.light {
+  &.gray-light {
     color: #888eb0;
-    background-color: ${styleBgColor.light};
+    background-color: ${styleBgColor.grayLight};
     &:hover {
-      background-color: ${styleBgHoverColor.light};
+      background-color: ${styleBgHoverColor.grayLight};
     }
   }
 
-  &.dark {
-    background-color: ${styleBgColor.dark};
+  &.gray-dark {
+    background-color: ${styleBgColor.grayDark};
     &:hover {
-      background-color: ${styleBgHoverColor.dark};
+      background-color: ${styleBgHoverColor.grayDark};
     }
   }
 `
