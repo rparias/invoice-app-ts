@@ -50,6 +50,7 @@ const AppGrid: React.FC = (): JSX.Element => {
             <Button label="Save as Draft" className="gray-dark" />
             <Button label="Edit" className="white" />
             <Button label="Edit" className="black" />
+            <Button label="+ Add New Item" className="white large" />
             {invoices.length > 0 ? <InvoiceList invoices={invoices} /> : <EmptyPage />}
           </Box>
         </Grid>

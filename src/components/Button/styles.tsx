@@ -71,6 +71,10 @@ const ButtonContainer = styled.button`
       background-color: ${styleBgHoverColor.black};
     }
   }
+
+  &.large {
+    padding: 1.3rem 8rem;
+  }
 `
 
 export { ButtonContainer }
