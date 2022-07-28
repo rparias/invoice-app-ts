@@ -15,7 +15,7 @@
   },
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx"],
+      "files": ["*.ts", "*.tsx", "**/*.stories.*"],
       "rules": {
         "no-undef": "off"
       }
@@ -25,6 +25,14 @@
   "rules": {
     "comma-dangle": 0,
     "implicit-arrow-linebreak": "off",
+    "import/no-anonymous-default-export": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": ["**/*.stories.*", "**/.storybook/**/*.*"],
+        "peerDependencies": true
+      }
+    ],
     "import/prefer-default-export": "off",
     "indent": "off",
     "no-console": "off",
