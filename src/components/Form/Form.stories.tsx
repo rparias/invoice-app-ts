@@ -2,7 +2,8 @@ import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { Add } from 'grommet-icons'
-import { Box, Button } from 'grommet'
+import { Box, Button, Grommet } from 'grommet'
+import theme from '../../grommet-styles/global-styles'
 import Form from './Form'
 
 export default {
@@ -19,10 +20,12 @@ const Template: ComponentStory<typeof Form> = (args) => {
   const onClose = (): void => setOpen(false)
 
   return (
-    <Box fill align="center" justify="center">
-      <Button icon={<Add />} label="Add" onClick={onOpen} />
-      {open && <Form {...args} onClose={onClose} />}
-    </Box>
+    <Grommet theme={theme}>
+      <Box fill align="center" justify="center">
+        <Button icon={<Add />} label="Add" onClick={onOpen} />
+        {open && <Form {...args} onClose={onClose} />}
+      </Box>
+    </Grommet>
   )
 }
 
