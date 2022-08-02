@@ -74,6 +74,7 @@ const ButtonContainer = styled.button`
 
   &.large {
     padding: 1.3rem 8rem;
+    width: 100%;
   }
 `
 
