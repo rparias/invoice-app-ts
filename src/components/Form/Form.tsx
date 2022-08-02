@@ -1,14 +1,88 @@
 import React from 'react'
 
-import { Close } from 'grommet-icons'
+import { Close, Trash } from 'grommet-icons'
 
-import { Box, Button, DateInput, FormField, Heading, Layer, Select, Text, TextInput } from 'grommet'
+import {
+  Box,
+  Button,
+  DataTable,
+  DateInput,
+  FormField,
+  Heading,
+  Layer,
+  Select,
+  Text,
+  TextInput
+} from 'grommet'
 
 type Props = {
   onClose: () => void
 }
 
 const dropDownOptions = ['Net 1 Day', 'Net 7 Days', 'Net 14 Days', 'Net 30 Days']
+
+const tableData = [
+  {
+    itemName: 'Banner Design',
+    quantity: 1,
+    price: 156,
+    total: 156
+  },
+  {
+    itemName: 'Email Design',
+    quantity: 1,
+    price: 200,
+    total: 200
+  }
+]
+
+const columns = [
+  {
+    property: 'itemName',
+    header: <Text>Item Name</Text>,
+    render: ({ itemName }: { itemName: string }) => (
+      <TextInput
+        placeholder="Item Name"
+        value={itemName}
+        onChange={(event) => console.log(event.target.value)}
+      />
+    )
+  },
+  {
+    property: 'quantity',
+    header: <Text>Qty.</Text>,
+    render: ({ quantity }: { quantity: number }) => (
+      <TextInput
+        type="number"
+        placeholder="Qty."
+        value={quantity}
+        onChange={(event) => console.log(event.target.value)}
+      />
+    )
+  },
+  {
+    property: 'price',
+    header: <Text>Price</Text>,
+    render: ({ price }: { price: number }) => (
+      <TextInput
+        type="number"
+        placeholder="Price"
+        value={price.toFixed(2)}
+        onChange={(event) => console.log(event.target.value)}
+      />
+    )
+  },
+  {
+    property: 'total',
+    header: <Text>Total</Text>,
+    render: ({ total }: { total: number }) => (
+      <Box direction="row-responsive" justify="between" align="center">
+        <Text color="#888EB0">{total.toFixed(2)}</Text>
+        <Button icon={<Trash />} onClick={() => console.log('delete')} />
+      </Box>
+    )
+  }
+]
 
 const Form: React.FC<Props> = ({ onClose }): JSX.Element => {
   const [select, setSelect] = React.useState(dropDownOptions[0])
@@ -155,11 +229,16 @@ const Form: React.FC<Props> = ({ onClose }): JSX.Element => {
           </FormField>
         </Box>
         <Box flex="grow" overflow="auto">
-          <Text>Item List</Text>
+          <Text color="#777F98" weight="bold" margin={{ vertical: 'medium' }}>
+            Item List
+          </Text>
         </Box>
-        <Box flex={false} as="footer" align="start">
+        <Box align="center">
+          <DataTable columns={columns} data={tableData} sortable size="medium" />
+        </Box>
+        {/* <Box flex={false} as="footer" align="start">
           <Button type="submit" label="Submit" onClick={onClose} primary />
-        </Box>
+        </Box> */}
       </Box>
     </Layer>
   )
