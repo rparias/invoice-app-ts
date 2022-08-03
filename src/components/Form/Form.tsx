@@ -171,13 +171,21 @@ const Form: React.FC<Props> = ({ onClose }): JSX.Element => {
             Item List
           </Text>
         </Box>
-        <Box align="center">
+        <Box flex={false}>
           <DataTable columns={columns} data={tableData} sortable size="medium" />
           <Button label="+ Add New Item" className="white large" />
         </Box>
-        {/* <Box flex={false} as="footer" align="start">
-          <Button type="submit" label="Submit" onClick={onClose} primary />
-        </Box> */}
+        <Box
+          flex={false}
+          direction="row"
+          as="footer"
+          justify="end"
+          gap="small"
+          pad={{ vertical: 'medium' }}
+        >
+          <Button label="Cancel" onClick={onClose} className="white" />
+          <Button type="submit" label="Save Changes" onClick={onClose} />
+        </Box>
       </Box>
     </Layer>
   )
