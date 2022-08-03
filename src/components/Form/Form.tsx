@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { Close } from 'grommet-icons'
-
 import {
   Box,
   Button as GButton,
@@ -14,6 +13,8 @@ import {
   Text,
   TextInput
 } from 'grommet'
+// import { useAppSelector, useAppDispatch } from '../../hooks'
+// import { open, close } from '../../state/reducers/formSlice'
 
 import { columns, dropDownOptions, tableData } from './data'
 import Button from '../Button'
