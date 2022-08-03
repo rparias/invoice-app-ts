@@ -3,15 +3,21 @@ import { ButtonContainer } from './styles'
 
 type Props = {
   label: string
+  type?: 'button' | 'submit' | 'reset' | undefined
   className?: string
+  onClick?: () => void
 }
 
-const Button: React.FC<Props> = ({ label, className = 'primary' }): JSX.Element => (
-  <ButtonContainer className={className}>{label}</ButtonContainer>
+const Button: React.FC<Props> = ({ label, className, type, onClick }): JSX.Element => (
+  <ButtonContainer type={type} className={className} onClick={onClick}>
+    {label}
+  </ButtonContainer>
 )
 
 Button.defaultProps = {
-  className: 'primary'
+  className: 'primary',
+  type: 'button',
+  onClick: () => null
 }
 
 export default Button
