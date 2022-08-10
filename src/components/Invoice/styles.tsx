@@ -9,6 +9,7 @@ const InvoiceContainer = styled.article`
   grid-auto-flow: column;
   grid-template-areas: 'id date name price status';
   align-items: center;
+  cursor: pointer;
 
   @media only screen and (max-width: 768px) {
     grid-template-areas:
