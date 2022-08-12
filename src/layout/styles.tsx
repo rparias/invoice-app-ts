@@ -9,7 +9,7 @@ const AppGridContainer = styled.div`
 
   .main-content {
     padding: 2rem;
-    display: block;
+    height: 100%;
   }
 
   @media only screen and (min-width: 1025px) {

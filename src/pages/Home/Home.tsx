@@ -3,10 +3,11 @@ import { close } from '../../state/reducers/formSlice'
 import { HeadingInvoices } from '../../components/Heading'
 import { Form } from '../../components/Form'
 import { InvoiceList } from '../../layout/InvoiceList'
-import { EmptyPage } from '../../layout/EmptyPage'
+import { EmptyPage } from '../EmptyPage'
 import { Invoice } from '../../types'
 import { useAppSelector, useAppDispatch } from '../../hooks'
 import invoiceData from '../../data/data.json'
+import { HomeContainer } from './styles'
 
 const initialData: Invoice[] = invoiceData.map((invoice) => {
   const { id, createdAt, clientName, total, status } = invoice
@@ -20,11 +21,11 @@ const Home: React.FC = (): JSX.Element => {
   const [invoices] = useState(initialData)
 
   return (
-    <>
+    <HomeContainer className={invoices.length === 0 ? 'empty' : undefined}>
       {isFormOpen && <Form onClose={() => dispatch(close())} />}
       <HeadingInvoices numberOfInvoices={invoices.length} />
       {invoices.length > 0 ? <InvoiceList invoices={invoices} /> : <EmptyPage />}
-    </>
+    </HomeContainer>
   )
 }
 
