@@ -1,29 +1,13 @@
 import React, { useState } from 'react'
 import { Box, Grid, Text } from 'grommet'
-import { useWindowSize, useAppSelector, useAppDispatch } from '../hooks'
-import { close } from '../state/reducers/formSlice'
+import { useWindowSize } from '../hooks'
 import { Navbar } from '../components/Navbar'
-import { HeadingInvoices } from '../components/Heading'
-import { Form } from '../components/Form'
-import { InvoiceList } from './InvoiceList'
-import { Invoice } from '../types'
-import { EmptyPage } from './EmptyPage'
+import { Home } from '../pages/Home'
 import { AppGridContainer } from './styles'
-import invoiceData from '../data/data.json'
 
 const AppGrid: React.FC = (): JSX.Element => {
   const { width } = useWindowSize()
   const [isDarkTheme, setIsDarkTheme] = useState(false)
-  const dispatch = useAppDispatch()
-  const isFormOpen = useAppSelector((state) => state.form.isOpen)
-
-  const initialData: Invoice[] = invoiceData.map((invoice) => {
-    const { id, createdAt, clientName, total, status } = invoice
-    const invoiceFormated: Invoice = { id, date: createdAt, name: clientName, price: total, status }
-    return invoiceFormated
-  })
-
-  const [invoices] = useState(initialData)
 
   return (
     <AppGridContainer>
@@ -46,9 +30,7 @@ const AppGrid: React.FC = (): JSX.Element => {
             <Navbar isDarkTheme={isDarkTheme} setIsDarkTheme={setIsDarkTheme} />
           </Box>
           <Box gridArea="main" justify="center" align="center" className="main-content">
-            {isFormOpen && <Form onClose={() => dispatch(close())} />}
-            <HeadingInvoices numberOfInvoices={invoices.length} />
-            {invoices.length > 0 ? <InvoiceList invoices={invoices} /> : <EmptyPage />}
+            <Home />
           </Box>
         </Grid>
       ) : (
