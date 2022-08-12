@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { Box, Grid, Text } from 'grommet'
+import { Routes, Route } from 'react-router-dom'
 import { useWindowSize } from '../hooks'
 import { Navbar } from '../components/Navbar'
 import { Home } from '../pages/Home'
+import { InvoiceDetail } from '../pages/InvoiceDetail'
 import { AppGridContainer } from './styles'
 
 const AppGrid: React.FC = (): JSX.Element => {
@@ -30,7 +32,10 @@ const AppGrid: React.FC = (): JSX.Element => {
             <Navbar isDarkTheme={isDarkTheme} setIsDarkTheme={setIsDarkTheme} />
           </Box>
           <Box gridArea="main" justify="center" align="center" className="main-content">
-            <Home />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/invoice" element={<InvoiceDetail />} />
+            </Routes>
           </Box>
         </Grid>
       ) : (
