@@ -27,7 +27,7 @@ const InvoiceStatusContainer = styled.div<Props>`
   color: ${(props) => statusTextColor[props.status as keyof typeof statusTextColor]};
   background-color: ${(props) => statusBgColor[props.status as keyof typeof statusBgColor]};
   border-radius: 6px;
-  width: 85px;
+  min-width: 85px;
 
   .dot {
     height: 0.625rem;
