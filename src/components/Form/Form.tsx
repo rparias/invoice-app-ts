@@ -15,7 +15,7 @@ import {
 } from 'grommet'
 
 import { columns, dropDownOptions, tableData } from './data'
-import Button from '../Button'
+import { Button } from '../Button'
 
 type Props = {
   onClose: () => void
