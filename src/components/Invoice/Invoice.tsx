@@ -1,13 +1,16 @@
 import React from 'react'
 import { Box, Text } from 'grommet'
+import { useNavigate } from 'react-router-dom'
 import { InvoiceContainer } from './styles'
 import { InvoiceStatus } from '../InvoiceStatus'
 import { Invoice as InvoiceProps } from '../../types'
 import { ReactComponent as ArrowRight } from '../../assets/icon-arrow-right.svg'
 
 const Invoice: React.FC<InvoiceProps> = ({ id, date, name, price, status }): JSX.Element => {
+  const navigate = useNavigate()
+
   const handleOnClick = (): void => {
-    console.log('invoice clicked')
+    navigate(`/invoice/${id}`)
   }
   return (
     <Box

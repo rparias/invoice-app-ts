@@ -34,7 +34,7 @@ const AppGrid: React.FC = (): JSX.Element => {
           <Box gridArea="main" justify="center" align="center" className="main-content">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/invoice" element={<InvoiceDetail />} />
+              <Route path="/invoice/:id" element={<InvoiceDetail />} />
             </Routes>
           </Box>
         </Grid>
