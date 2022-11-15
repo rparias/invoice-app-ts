@@ -1,12 +1,31 @@
-import React from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { Box, Grid, Heading, Text } from 'grommet'
 import { useParams } from 'react-router-dom'
 import { Button } from '../../components/Button'
 import { InvoiceStatus } from '../../components/InvoiceStatus'
 import { InvoiceDetailContainer } from './styles'
+import { getInvoice } from '../../data/invoices'
 
 const InvoiceDetail: React.FC = (): JSX.Element => {
   const { id: invoiceId } = useParams()
+  const [invoice, setInvoice] = useState({})
+
+  const getCurrentInvoice = useCallback(() => {
+    if (invoiceId) {
+      const currentInvoice = getInvoice(invoiceId)
+      if (currentInvoice) {
+        setInvoice(currentInvoice)
+      }
+    }
+  }, [invoiceId])
+
+  useEffect(() => {
+    getCurrentInvoice()
+  }, [getCurrentInvoice])
+
+  useEffect(() => {
+    console.log('current invoice', invoice)
+  }, [invoice])
 
   return (
     <Grid width="100%" gap="medium">
