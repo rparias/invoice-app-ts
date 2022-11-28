@@ -58,12 +58,33 @@ const InvoiceDetail: React.FC = (): JSX.Element => {
         elevation="xsmall"
         style={{ padding: '3rem' }}
       >
-        <Heading level={1}>
-          <Text style={{ fontSize: '0.8em' }} color="dark-4">
-            #
-          </Text>
-          {invoiceId}
-        </Heading>
+        <Box direction="row" justify="between" a11yTitle="Invoice ID order and address">
+          <Box>
+            <Heading level={1} margin={{ bottom: '0.3rem', top: '0' }}>
+              <Text style={{ fontSize: '0.8em' }} color="dark-4">
+                #
+              </Text>
+              {invoiceId}
+            </Heading>
+            <Text size="small" color="dark-4">
+              {invoice.description}
+            </Text>
+          </Box>
+          <Box>
+            <Text size="small" color="dark-4" textAlign="end">
+              {invoice.senderAddress.street}
+            </Text>
+            <Text size="small" color="dark-4" textAlign="end">
+              {invoice.senderAddress.city}
+            </Text>
+            <Text size="small" color="dark-4" textAlign="end">
+              {invoice.senderAddress.postCode}
+            </Text>
+            <Text size="small" color="dark-4" textAlign="end">
+              {invoice.senderAddress.country}
+            </Text>
+          </Box>
+        </Box>
       </Box>
     </Grid>
   )
