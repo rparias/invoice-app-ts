@@ -5,10 +5,11 @@ import { Button } from '../../components/Button'
 import { InvoiceStatus } from '../../components/InvoiceStatus'
 import { InvoiceDetailContainer } from './styles'
 import { getInvoice } from '../../data/invoices'
+import { InvoiceDTO } from '../../types/DTO/invoice.dto'
 
 const InvoiceDetail: React.FC = (): JSX.Element => {
   const { id: invoiceId } = useParams()
-  const [invoice, setInvoice] = useState({})
+  const [invoice, setInvoice] = useState<InvoiceDTO | undefined>(undefined)
 
   const getCurrentInvoice = useCallback(() => {
     if (invoiceId) {
@@ -23,9 +24,9 @@ const InvoiceDetail: React.FC = (): JSX.Element => {
     getCurrentInvoice()
   }, [getCurrentInvoice])
 
-  useEffect(() => {
-    console.log('current invoice', invoice)
-  }, [invoice])
+  if (invoice === undefined) {
+    return <Heading level={2}>There is no invoice with {invoiceId} id</Heading>
+  }
 
   return (
     <Grid width="100%" gap="medium">
@@ -41,7 +42,7 @@ const InvoiceDetail: React.FC = (): JSX.Element => {
             <Text a11yTitle="Status" color="#858BB2">
               Status
             </Text>
-            <InvoiceStatus status="pending" />
+            <InvoiceStatus status={invoice.status} />
           </div>
           <div className="actions">
             <Button label="Edit" className="white" />
